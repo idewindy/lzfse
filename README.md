@@ -21,7 +21,7 @@ Files
     src/lzfse_decode_base.c               LZFSE decoder internal functions
     src/lzfse_encode_base.c               LZFSE encoder internal functions
     src/lzfse_encode_tables.h             LZFSE encoder tables
-    
+
     src/lzfse_fse.h                       FSE entropy encoder/decoder header
     src/lzfse_fse.c                       FSE entropy encoder/decoder functions
     
@@ -65,6 +65,19 @@ Building with cmake
     $ make install
 
 Installs the header, library, and command line tool in `/usr/local`.
+
+Step 1. Download lzfse
+
+Step 2. cd into lzfse-master and issue this command: xcodebuild install DSTROOT=/tmp/lzfse.dst
+
+Step 3. Issue this cd command: cd /tmp/lzfse.dst/usr/local/bin/
+
+Step 4. The binary that needs to be used will be in that bin directory.
+Usage: ./lzfse -encode|-decode [-i input_file] [-o output_file] [-h] [-v]
+
+Just by executing this command below, I was able to read my notes.sqlite:
+
+ ./lzfse -decode -i /Users/Mathew/Desktop/notes.sqlite -o  /Users/Mathew/Desktop/decoded.sqlite
 
 Bindings
 --------
